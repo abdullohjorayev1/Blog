@@ -1,0 +1,83 @@
+@import "./blog.css";
+@import "./blog-post.css";
+
+:root{
+  --primary-color: #1e90ff;
+  --secondary-color: #7dba29;
+}
+
+/* GENERAL */
+*, *::before, *::after{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+*:focus{
+  outline: 3px dotted var(--primary-color);
+  outline-offset: 3px;
+}
+body{
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1100px){
+  .container{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-rows: 100px 95%;
+    grid-template-columns: 250px 100px;
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd"
+    "main main main main main main sd sd"
+    "ft ft ft ft ft ft ft ft";
+  }
+  .sidebar{
+    grid-area: sd;
+  }
+  .blog-title{
+    font-size: 32px;
+  }
+}
+@media only screen and (min-width: 1101px){
+  .container{
+    display: grid;
+    width: 90%;
+    margin: auto;
+    grid-template-rows: 100px 95%;
+    grid-template-columns: 250px 100px;
+    grid-template-areas: 
+    "hd hd hd hd hd hd hd hd"
+    "main main main main main sd sd sd"
+    "ft ft ft ft ft ft ft ft";
+  }
+  .sidebar{
+    grid-area: sd;
+  }
+  .blog-title{
+    font-size: 35px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1100px){
+  .header-title{
+    font-size: 32px;
+  }
+  .section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+}
+@media only screen and (min-width: 1101px){
+  .header-title{
+    font-size: 35px;
+  }
+  .section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px
+  }
+}
